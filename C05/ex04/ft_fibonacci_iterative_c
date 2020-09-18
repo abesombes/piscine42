@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abesombes <marvin@42.fr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/06 17:19:29 by abesombes         #+#    #+#             */
+/*   Updated: 2020/09/06 17:28:36 by abesombes        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdbool.h>
+
+void ft_putchar (char c)
+{
+	write(1, &c, 1);
+}
+
+int ft_fibonacci(int index)
+{
+	int result;
+	int result_n1;
+	int result_n2;
+	int i;
+
+	i = 1;
+	result_n1 = 1;
+	result_n2 = 0;
+	if (index < 0)
+		return -1;
+	if (index == 0)
+		return 0;
+	else if (index == 1)
+		return 1;
+	else 
+	while (++i <= index)
+	{
+		result = result_n1 + result_n2;
+		result_n2 = result_n1;
+		result_n1 = result;
+		printf("\nF(%i): %i",i , result);
+	}
+	return result; 
+}
+
+int main (void)
+{
+	int index;
+
+	index = 16;
+	printf("\nft_fibonacci(%i): %i", index, ft_fibonacci(index));
+}
+
