@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexandre <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/15 11:40:20 by alexandre         #+#    #+#             */
-/*   Updated: 2020/11/15 22:23:43 by abesombe         ###   ########.fr       */
+/*   Created: 2020/11/15 22:48:07 by abesombe          #+#    #+#             */
+/*   Updated: 2020/11/15 22:50:43 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-size_t	ft_strlen(const char *s);
-void	ft_bzero(void *s, size_t n);
-int		ft_isalpha(int c);
-
-#endif
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
+}
