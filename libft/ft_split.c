@@ -6,13 +6,13 @@
 /*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 22:35:27 by abesombe          #+#    #+#             */
-/*   Updated: 2020/11/19 23:41:58 by abesombe         ###   ########.fr       */
+/*   Updated: 2020/11/20 10:35:04 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
 	int i;
 	int j;
@@ -34,7 +34,7 @@ static int		ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static char		*ft_strn_dup(const char *source, size_t size)
+static char	*ft_strn_dup(const char *source, size_t size)
 {
 	char	*dup;
 	size_t	i;
@@ -51,7 +51,7 @@ static char		*ft_strn_dup(const char *source, size_t size)
 	return (dup);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		i;
