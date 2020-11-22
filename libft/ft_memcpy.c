@@ -6,7 +6,7 @@
 /*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:47:21 by abesombe          #+#    #+#             */
-/*   Updated: 2020/11/16 22:35:02 by abesombe         ###   ########.fr       */
+/*   Updated: 2020/11/20 22:56:04 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (NULL);
 	dst = dest;
 	while (n--)
-		*(char *)dest++ = *(char *)src++;
+		*(unsigned char *)dest++ = *(unsigned char *)src++;
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:56:08 by abesombe          #+#    #+#             */
-/*   Updated: 2020/11/19 12:00:32 by abesombe         ###   ########.fr       */
+/*   Updated: 2020/11/21 14:01:45 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int size;
+	int		size;
+	t_list	*tmp;
 
 	size = 0;
-	while (lst)
+	tmp = lst;
+	while (tmp)
 	{
-		lst = lst->next;
+		tmp = tmp->next;
 		size++;
 	}
 	return (size);

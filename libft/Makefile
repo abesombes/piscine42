@@ -6,7 +6,7 @@
 #    By: abesombes <marvin@42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/06 12:36:03 by abesombes         #+#    #+#              #
-#    Updated: 2020/11/20 00:22:18 by abesombe         ###   ########.fr        #
+#    Updated: 2020/11/21 15:59:04 by abesombe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,6 @@ $(NAME): $(OBJS_PARTS) $(HEADER)
 	@$(LIBC) $(NAME) $(OBJS_PARTS)
 
 bonus: $(OBJS_BONUS) $(HEADER)
-	@$(CC) -c $(SRCS_PARTS) $(SRCS_BONUS) $(CFLAGS)
 	@$(LIBC) $(NAME) $(OBJS_BONUS)
 
 all: $(NAME)

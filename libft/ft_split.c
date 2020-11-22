@@ -6,7 +6,7 @@
 /*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 22:35:27 by abesombe          #+#    #+#             */
-/*   Updated: 2020/11/20 10:35:04 by abesombe         ###   ########.fr       */
+/*   Updated: 2020/11/20 18:39:33 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,31 +51,37 @@ static char	*ft_strn_dup(const char *source, size_t size)
 	return (dup);
 }
 
+static char	**ft_free_memory(char **strs, int index)
+{
+	while (index > 0)
+		free(strs[index--]);
+	free(strs);
+	return (NULL);
+}
+
 char		**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		i;
-	int		j;
 	int		count_wd;
 
-	if (!c || !s)
+	if (!s)
 		return (NULL);
 	count_wd = ft_count_words(s, c);
 	if (!(strs = (char **)malloc((count_wd + 1) * sizeof(char *))))
 		return (NULL);
 	strs[count_wd] = 0;
 	count_wd = 0;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
+		while (*s && *s == c)
+			s++;
+		i = 0;
+		while (*(s + i) && *(s + i) != c)
 			i++;
-		j = 0;
-		while (s[i + j] && s[i + j] != c)
-			j++;
-		if (j > 0)
-			strs[count_wd++] = ft_strn_dup(s + i, j - 1);
-		i = i + j;
+		if (i > 0 && !(strs[count_wd++] = ft_strn_dup(s, i - 1)))
+			return (ft_free_memory(strs, count_wd - 1));
+		s = s + i;
 	}
 	return (strs);
 }

@@ -6,7 +6,7 @@
 /*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:30:34 by abesombe          #+#    #+#             */
-/*   Updated: 2020/11/19 12:01:12 by abesombe         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:43:29 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (new)
+	if (new && alst)
 	{
 		new->next = *alst;
 		*alst = new;

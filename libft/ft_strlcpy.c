@@ -6,7 +6,7 @@
 /*   By: abesombe <abesombe@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 06:45:09 by abesombe          #+#    #+#             */
-/*   Updated: 2020/11/17 21:44:59 by abesombe         ###   ########.fr       */
+/*   Updated: 2020/11/21 14:00:03 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t src_size;
 
 	i = -1;
-	if (!src)
+	if (!dst)
 		return (0);
 	src_size = ft_strlen(src);
 	if (size == 0)
